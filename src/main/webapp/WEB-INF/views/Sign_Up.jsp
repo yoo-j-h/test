@@ -80,7 +80,7 @@
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
                         <circle cx="12" cy="7" r="4"/>
                     </svg>
-                    <input type="text" id="name" name="name" autocomplete="name"
+                    <input type="text" id="name" name="memberName" autocomplete="name"
                            placeholder="홍길동"
                            class="input-field w-full h-[50px] pl-10 pr-4 bg-[#F3F3F5] border border-[#D1D5DC] rounded-lg text-sm"
                            required/>
@@ -90,16 +90,35 @@
             <!-- Email Field -->
             <div class="space-y-2">
                 <label for="email" class="text-sm text-[#364153]">이메일</label>
-                <div class="relative">
-                    <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#99A1AF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect width="20" height="16" x="2" y="4" rx="2"/>
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                    </svg>
-                    <input type="email" id="email" name="email" autocomplete="email"
-                           placeholder="example@email.com"
-                           class="input-field w-full h-[50px] pl-10 pr-4 bg-[#F3F3F5] border border-[#D1D5DC] rounded-lg text-sm"
-                           required/>
+
+                <div class="relative flex gap-2">
+                    <!-- 이메일 입력창 -->
+                    <div class="relative flex-1">
+                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#99A1AF]"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+
+                        <input type="email" id="email" name="email" autocomplete="email"
+                               placeholder="example@email.com"
+                               class="input-field w-full h-[50px] pl-10 pr-4 bg-[#F3F3F5] border border-[#D1D5DC]
+                          rounded-lg text-sm"
+                               required/>
+                    </div>
+
+                    <!-- 중복확인 버튼 -->
+                    <button type="button"
+                            id="checkEmailBtn"
+
+                            class="w-[110px] h-[50px] bg-[#F54900] text-white rounded-lg text-sm hover:bg-[#D94000]">
+                        중복확인
+                    </button>
                 </div>
+
+                <!-- 상태 메시지 -->
+                <p id="emailCheckMsg" class="text-sm mt-1"></p>
             </div>
 
             <!-- Phone Field -->
@@ -124,7 +143,7 @@
                         <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                     </svg>
-                    <input type="password" id="password" name="password" autocomplete="new-password"
+                    <input type="password" id="password" name="memberPwd" autocomplete="new-password"
                            placeholder="최소 8자 이상" minlength="8"
                            class="input-field w-full h-[50px] pl-10 pr-12 bg-[#F3F3F5] border border-[#D1D5DC] rounded-lg text-sm"
                            required/>
